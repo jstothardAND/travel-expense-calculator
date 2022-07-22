@@ -9,8 +9,8 @@ type TechnologyCardProps = {
 };
 
 const Home: NextPage = () => {
-  const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
-
+  const transports = trpc.useQuery(["transport.getAll"]);
+  console.log("transports", JSON.stringify(transports.data, null, 2));
   return (
     <>
       <Head>
@@ -46,9 +46,7 @@ const Home: NextPage = () => {
             documentation="https://trpc.io/"
           />
         </div>
-        <div className="pt-6 text-2xl text-blue-500 flex justify-center items-center w-full">
-          {hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
-        </div>
+        <div className="pt-6 text-2xl text-blue-500 flex justify-center items-center w-full"></div>
       </main>
     </>
   );

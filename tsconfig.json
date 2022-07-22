@@ -16,6 +16,9 @@
     "incremental": true,
     "noUncheckedIndexedAccess": true
   },
+  "paths": {
+    "@/*": ["./src/*"]
+  },
   "include": [
     "next-env.d.ts",
     "next-auth.d.ts",
